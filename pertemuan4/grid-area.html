@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Percobaan</title>
+	<style type="text/css">
+		
+html{
+	margin: 0;
+	padding: 0;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+.container {
+	border: 3px solid black;
+	width: 80%;
+	margin: 50px auto;
+	display: grid;
+	grid-template-areas:
+	"header header header"
+	"aside main main"
+	"footer footer footer";
+	grid-template-columns: minmax(200px,300px) 1fr 1fr;
+	grid-template-rows:repeat(3,100px);
+
+	
+}
+
+.item{
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+
+}
+.header{
+	grid-area: header;
+	background-color: #e74fff;
+}
+
+
+.aside {
+	grid-area: aside;
+	background-color: #44a1ff;
+}
+
+.main {
+	grid-area: main;
+	background-color: #ffc700;
+}
+
+.footer{
+	grid-area: footer;
+	background-color: #8c7e82;
+}
+
+
+
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="header">HEADER</div>
+	<div class="aside">ASIDE</div>
+	<div class="main">MAIN</div>
+	<div class="footer">FOOTER</div>
+</div>
+</body>
+</html>

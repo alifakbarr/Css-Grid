@@ -1,0 +1,88 @@
+grid css terminologi
+
+grid container : elemen pembungkus grid,di definisikan dengan display : grid;
+
+grid item : elemen elemen didalam grid container.
+
+grid line : garis horizontal(kolom) atau vertikal(baris) yang memisahkan
+ grid menjadi beberapa bagian dan ditandai dengan angka. 
+
+grid cell: perpotongan / pertemuan antara baris dan kolom di dalam grid.
+
+grid area : kumpulan lebih dari satu grid cell yang membentuk kotak.
+
+grip track : ukuran / jarak antara 2 grid line,bisa horizontal (kolom) atau vaertikal(baris).
+
+grid gap : jarak antara grid / cell.
+
+=========================================
+
+grid css function & keywords
+
+repeat() :menentukan ukuran grid track secara berulang.
+
+min-content() & max-content :menentukan seberapa besar ukuran grid track berdasarkan content pada sebuah item
+grid-template-columns:min-content|max-content;
+min-content akan memecah kata
+max-content akan menjadikan baris
+
+minmax():menentukan ukuran minimal dan maksimal darigrid track;
+grid-template-columns:minmax(200px,300px)
+
+auto-fill & auto-fit :menentukan jumlah item untuk berada pada grid-track
+grid-template-columns:repeat(auto-fit/auto-fill,150px);.
+auto-fill dapat memperlihatkan space yang dapat diisi item lain.
+auto-fit kebalikannya,dan akan terlihat saat itemnya sedikit,auto fit akan ngisi tempat yang kosong.
+
+======================================
+
+area & gap
+
+.container {
+grid-template-area : mendefinisikan grid tempalate
+menggunakan nama dari area yang ditulis pada property
+grid-area pada item
+
+grid-template :shorthand untuk mendefinisikan
+grid-template-rows,grid-template-coloums,dan
+grid-template-areas dalam satu deklarasi
+
+justify-items: mensejajarkan grid-items pada sumbu horizontal
+justify-items:start|end|strech|center
+
+align-items: mensejajarkan grid-items pada sumbu vertikal
+align-items: start|end|strech|center
+
+place-items:shorthand untuk menuliskan justify-items dan align-items dalam satu deklarasi
+place-items:<align-items>|<justify-items>
+
+justify-content:mengatur posisi seluruh grid container pada sumbu horizontal.
+ini bisa dilakukan ketika ukuran total grid lebih kecil dari ukuran containernya,
+biasanya ketika grid itemsnya menggunakan ukuran yang fixed (px);
+justify-content:start|end|center|strech|space-around|space-between|space-evenly
+
+align-content:sama seperti justify-contet tapi sumbu vertikal
+align-content:start|end|center|strech|space-around|space-between|space-evenly
+
+place-content:<align-content>|<justify-content>
+
+}
+
+.item{
+
+grid-coloumn-start&grid-column-end
+grid-row-start & grid-row-end
+menentukan tempat dari grid item dengan mengacu pada nomor atau nama grid line yang spesifik
+grid-colomn-start:<nomor>|<nama>|span<nomor>|span<nama>|auto;
+grid-colomn-end:<nomor>|<nama>|span<nomor>|span<nama>|auto;
+grid-row-start:<nomor>|<nama>|span<nomor>|span<nama>|auto;
+grid-row-end:<nomor>|<nama>|span<nomor>|span<nama>|auto;
+span artinya menambah
+
+grid-column & grid-row:shorthand untuk start dan end pada grid column dan grid row
+grid-column:startline/endline |start-line/span-value;
+grid-row:startline/endline |start-line/span-value;
+
+justify-self:start|end|center|strech
+align-self:start|end|center|strech
+}		
